@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int linearSearch(int arr[], int n, int key) {
+    for (int i = 0; i < n; i++) {
+        if (arr[i] == key) {
+            return i + 1; // Adding 1 to convert from 0-based index to 1-based position
+        }
+    }
+    return -1; // Key not found
+}
+
+int main() {
+    int A[] = {899, 786, 112, 485, 459, 185, 789, 456, 786, 110};
+    int key = 786;
+    int n = sizeof(A) / sizeof(A[0]);
+    
+    int position = linearSearch(A, n, key);
+    
+    if (position != -1) {
+        printf("Found at position %d.\n", position);
+    } else {
+        printf("Key not found.\n");
+    }
+    
+    return 0;
+}
